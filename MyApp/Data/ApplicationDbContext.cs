@@ -41,7 +41,7 @@ namespace MyApp.Data
             builder.Entity<TestEntity>(entity =>
             {
                 entity.HasKey(x => new {x.AppId, x.Name});
-                entity.Property(x => x.Name).HasMaxLength(10).IsRequired();
+                entity.Property(x => x.Name).HasMaxLength(100).IsRequired();
 
                 entity.HasMany(x => x.Children).WithOne().HasForeignKey(x => new { x.AppId, x.Name }).IsRequired();
             });
